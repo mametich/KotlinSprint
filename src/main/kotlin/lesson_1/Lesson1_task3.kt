@@ -1,12 +1,21 @@
 package lesson_1
 
-fun main(){
-    val yearOfFlight = "Год полета - 1961"
-    var hourAndMinute = "Взлет - 09:07"
-    println(yearOfFlight)
-    println(hourAndMinute)
+fun main() {
 
-    hourAndMinute = "Посадка - 10:55"
+    val yearOfFlight = "1961"
+    var hour = "09"
+    var minute = "07"
+    println(
+        """
+            $yearOfFlight
+            $hour
+            $minute
+        """.trimIndent()
+    )
 
-    println(hourAndMinute)
+    hour = "10"
+    minute = "55"
+    println("$hour:$minute")
+
+
 }

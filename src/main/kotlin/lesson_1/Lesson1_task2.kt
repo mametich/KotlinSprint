@@ -1,14 +1,16 @@
 package lesson_1
 
 
-fun main(){
+fun main() {
 
-    var numberOfOrders = 0
+    val numberOfOrders = 75
     val textGratitude = "Thank you for your order"
     println(numberOfOrders)
     println(textGratitude)
 
-    //var numberOfEmployees = 2000
-    var numberOfEmpoyees = 1999
-    println(numberOfEmpoyees)
+    var numberOfEmployees = 2000
+    //println(numberOfEmployees)
+    numberOfEmployees = 1999
+    println(numberOfEmployees)
+
 }

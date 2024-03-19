@@ -1,15 +1,15 @@
 package lesson_4
 
-fun main() {
+private const val MIN_WEIGHT = 35
+private const val MAX_WEIGHT = 100
+private const val MAX_VOLUME = 100
 
-    val minWeight = 35
-    val maxWeight = 100
-    val maxVolume = 100
+fun main() {
 
     val cargoWeight = 20
     val cargoVolume = 0
 
     println("Груз с весом $cargoWeight кг и объемом $cargoVolume л соответствует категории 'Average': " +
-            "${cargoWeight > minWeight && cargoWeight <= maxWeight && cargoVolume < maxVolume}")
+            "${cargoWeight > MIN_WEIGHT && cargoWeight <= MAX_WEIGHT && cargoVolume < MAX_VOLUME}")
 
 }

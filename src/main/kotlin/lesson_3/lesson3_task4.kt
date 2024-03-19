@@ -6,13 +6,13 @@ fun main() {
     var toMotion = "E4"
     var numberOfMotion = 1
 
-    val motion = "$fromMotion,$toMotion,$numberOfMotion"
+    val motion = "[$fromMotion-$toMotion;$numberOfMotion]"
     println(motion)
 
     fromMotion = "D2"
     toMotion = "D3"
     numberOfMotion = 2
 
-    println("$fromMotion,$toMotion,$numberOfMotion")
+    println("[$fromMotion-$toMotion;$numberOfMotion]")
 
 }

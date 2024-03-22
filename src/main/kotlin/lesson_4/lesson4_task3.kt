@@ -10,11 +10,13 @@ fun main() {
     val isWeatherTodaySunny = true
     val isAwningIsOpenToday = true
     val airHumidityInProcentToday = 20
-    val seasonToday = "не зима"
+    val seasonToday = "зима"
 
-    val isFavorableConditions = IS_WEATHER_SUNNY == isWeatherTodaySunny &&
-            IS_AWNING_IS_OPEN == isAwningIsOpenToday &&
-            AIR_HUMIDITY_IN_PROCENT == airHumidityInProcentToday && SEASON == seasonToday
+    val isFavorableConditions =
+                IS_WEATHER_SUNNY == isWeatherTodaySunny &&
+                IS_AWNING_IS_OPEN == isAwningIsOpenToday &&
+                AIR_HUMIDITY_IN_PROCENT == airHumidityInProcentToday &&
+                SEASON == seasonToday
 
     println("Благоприятные ли условия сейчас для роста бобовых? $isFavorableConditions")
 

@@ -2,10 +2,10 @@ package lesson4
 
 fun main() {
 
-    var dateOfDate = 5
+    val dateOfDate = 5
 
     val isTrainingForArmsAndAbsMuscules = (dateOfDate % 2 != 0)
-    val isTrainingForBackAndLegs = (dateOfDate % 2 == 0)
+    val isTrainingForBackAndLegs = !isTrainingForArmsAndAbsMuscules
 
     println(
         """

@@ -24,14 +24,14 @@ fun main() {
 
 
     val conditionToGoToTheSea =
-        (isHaveNotDamageOnShip != IS_HAVE_DAMAGE &&
-                quantityOfCrewOnShip > MIN_QUANTITY_OF_CREW &&
-                quantityOfCrewOnShip < MAX_QUANTITY_OF_CREW &&
-                boxesOfProvisionOnShip > MIN_BOXES_OF_PROVISION &&
-                isNotFavorableWeather != IS_FAVORABLE_WEATHER) ||
-                (isHaveNotDamageOnShip == IS_HAVE_DAMAGE &&
-                        quantityOfCrewOnShip == MAX_QUANTITY_OF_CREW &&
-                        boxesOfProvisionOnShip > MIN_BOXES_OF_PROVISION)
+        (isHaveNotDamageOnShip != IS_HAVE_DAMAGE) &&
+                (quantityOfCrewOnShip > MIN_QUANTITY_OF_CREW) &&
+                (quantityOfCrewOnShip < MAX_QUANTITY_OF_CREW) &&
+                (boxesOfProvisionOnShip > MIN_BOXES_OF_PROVISION) &&
+                (isNotFavorableWeather != IS_FAVORABLE_WEATHER) ||
+                (isHaveNotDamageOnShip == IS_HAVE_DAMAGE) &&
+                (quantityOfCrewOnShip == MAX_QUANTITY_OF_CREW) &&
+                (boxesOfProvisionOnShip > MIN_BOXES_OF_PROVISION)
 
 
     println("Можно приступить к долгосрочному плаванию: $conditionToGoToTheSea")

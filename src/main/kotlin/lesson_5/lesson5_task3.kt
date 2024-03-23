@@ -6,10 +6,10 @@ fun main() {
     val secondCorrectNumber = 35
 
     println("Введите первое число от 0 до 42:")
-    val firstNumberFromUser = readlnOrNull()!!.toInt()
+    val firstNumberFromUser = readln().toInt()
 
     println("Введите второе число от 0 до 42:")
-    val secondNumberFromUser = readlnOrNull()!!.toInt()
+    val secondNumberFromUser = readln().toInt()
 
     if (firstNumberFromUser == firstCorrectNumber && secondNumberFromUser == secondCorrectNumber) {
         println("Поздравляем! Вы выиграли главный приз!")

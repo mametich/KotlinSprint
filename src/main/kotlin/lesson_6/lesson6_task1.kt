@@ -2,23 +2,22 @@ package lesson_6
 
 fun main() {
 
-    println("Придумайте логин:")
-    val newLoginUser = readLine()!!
+       do {
+           println("Придумайте логин:")
+           val newLoginUser = readln()
 
-    println("Придумайте пароль:")
-    val newPasswordUser = readLine()!!
+           println("Придумайте пароль:")
+           val newPasswordUser = readln()
 
-    println("Укажите Ваш логин:")
-    val registeredLoginUser = readLine()!!
+           println("Укажите Ваш логин:")
+           val registeredLoginUser = readln()
 
-    println("Укажите Ваш пароль:")
-    val registeredPasswordUser = readLine()!!
+           println("Укажите Ваш пароль:")
+           val registeredPasswordUser = readln()
+       }
 
-    var isCheckedLoginAndPassword = newLoginUser != registeredLoginUser || newPasswordUser != registeredPasswordUser
+    while (newLoginUser != registeredLoginUser && newPasswordUser != registeredPasswordUser)
+        println("Введите данные заново")
 
-    while (isCheckedLoginAndPassword) {
-      println("Введите данные заново")
-            isCheckedLoginAndPassword = false
-
-    }
+    println("Авторизация прошла успешно")
 }

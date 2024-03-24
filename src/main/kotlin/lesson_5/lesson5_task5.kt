@@ -13,13 +13,13 @@ fun main() {
     correctNumbersList.add(thirdCorrectNumber)
 
     println("Введите первое число:")
-    val firstUserNumber = readlnOrNull()!!.toInt()
+    val firstUserNumber = readln().toInt()
 
     println("Введите второе число:")
-    val secondUserNumber = readlnOrNull()!!.toInt()
+    val secondUserNumber = readln().toInt()
 
     println("Введите третье число:")
-    val thirdUserNumber = readlnOrNull()!!.toInt()
+    val thirdUserNumber = readln().toInt()
 
     val userNumbersList: MutableList<Int> = mutableListOf()
 

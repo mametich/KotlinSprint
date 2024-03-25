@@ -2,7 +2,7 @@ package lesson_6
 
 fun main() {
 
-    val correctNumber = 6
+    val correctNumber = (1..9).random()
     var quantityOfOpportunity = 0
 
     do {

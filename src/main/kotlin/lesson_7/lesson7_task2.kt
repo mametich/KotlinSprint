@@ -2,12 +2,9 @@ package lesson_7
 
 fun main() {
 
-    var randomNumber1 = (0..9).random()
-    var randomNumber2 = (0..9).random()
-    var randomNumber3 = (0..9).random()
-    var randomNumber4 = (0..9).random()
+    var randomNumber = (1000..9999).random()
 
-    var correctCode = "$randomNumber1$randomNumber2$randomNumber3$randomNumber4"
+    var correctCode = "$randomNumber"
     println("Ваш код авторизации: $correctCode")
 
     println("Введите Ваш код:")
@@ -19,11 +16,8 @@ fun main() {
         if (isCheckedCode) {
             println("Добро пожаловать!")
         } else {
-            randomNumber1 = (0..9).random()
-            randomNumber2 = (0..9).random()
-            randomNumber3 = (0..9).random()
-            randomNumber4 = (0..9).random()
-            correctCode = "$randomNumber1$randomNumber2$randomNumber3$randomNumber4"
+            randomNumber = (1000..9999).random()
+            correctCode = "$randomNumber"
             println("Ваш код авторизации: $correctCode")
 
             println("Введите Ваш код:")

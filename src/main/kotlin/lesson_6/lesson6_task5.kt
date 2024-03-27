@@ -18,14 +18,14 @@ fun main() {
         val sumFromNumbers = randomFirstNumber + randomSecondNumber
         val answerFromUser = readln().toInt()
         counter++
+
         val isCorrectAnswer = sumFromNumbers == answerFromUser
         if (isCorrectAnswer) {
             println ("Добро пожаловать!")
-            counter = 0
+            return
         }
-
         println("Неправильно! Осталось ${opportunity--} попыток")
-    }   while (!isCorrectAnswer && counter < 3)
+    }   while (counter < 3)
 
     println("Доступ запрещен. Попыток нет")
 }

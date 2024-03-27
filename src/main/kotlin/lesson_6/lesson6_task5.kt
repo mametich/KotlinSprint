@@ -27,5 +27,6 @@ fun main() {
         println("Неправильно! Осталось ${opportunity--} попыток")
     }   while (counter < 3)
 
+
     println("Доступ запрещен. Попыток нет")
 }

@@ -2,7 +2,14 @@ package lesson_7
 
 fun main() {
 
-    val chars1 = (('a'..'z') + (0..9)).shuffled().take(6).joinToString("")
-    println("Ваш пароль: $chars1")
+    val numericArray = ('a'..'z')
+    val numberArray = (0..9)
 
+    var password = ""
+
+    for(i in 0 until 3) {
+            password += numericArray.random()
+            password += numberArray.random()
+        }
+        println("Ваш пароль: $password")
 }

@@ -3,30 +3,29 @@ package lesson_6
 fun main() {
 
     println("Докажи что ты не бот. Реши пример сложения")
-    var firstNumber = (1..9).random()
-    var secondNumber = (1..9).random()
+    val firstNumber = (1..9)
+    val secondNumber = (1..9)
 
     var counter = 0
     var opportunity = 2
 
     do {
-        println("Сколько будет $firstNumber + $secondNumber")
-        val sumFromNumbers = firstNumber + secondNumber
+        val randomFirstNumber = firstNumber.random()
+        val randomSecondNumber = secondNumber.random()
 
+        println("Сколько будет $randomFirstNumber + $randomSecondNumber")
+
+        val sumFromNumbers = randomFirstNumber + randomSecondNumber
         val answerFromUser = readln().toInt()
-        val isCorrectAnswerForEnter = answerFromUser == sumFromNumbers
-
-        if (isCorrectAnswerForEnter){
+        counter++
+        val isCorrectAnswer = sumFromNumbers == answerFromUser
+        if (isCorrectAnswer) {
+            println ("Добро пожаловать!")
             counter = 0
-            println("Добро пожаловать!")
-        } else {
-            counter++
-            firstNumber = (1..9).random()
-            secondNumber = (1..9).random()
         }
+
         println("Неправильно! Осталось ${opportunity--} попыток")
+    }   while (!isCorrectAnswer && counter < 3)
 
-    }   while (!isCorrectAnswerForEnter && counter < 3)
-        println("Доступ запрещен. Попыток нет")
-
+    println("Доступ запрещен. Попыток нет")
 }

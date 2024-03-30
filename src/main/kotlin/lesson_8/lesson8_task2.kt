@@ -10,7 +10,7 @@ fun main() {
     for (i in arrayOfIngredients) {
         if (i == answerFromUser) {
             println("Ингредиент $answerFromUser в рецепте есть")
-            break
+            return
         }
     }
     println("Такого ингредиента в рецепте нет")

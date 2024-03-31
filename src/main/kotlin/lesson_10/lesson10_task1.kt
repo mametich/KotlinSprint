@@ -16,7 +16,4 @@ fun main() {
     println(messageOfResult)
 }
 
-fun theRollOfTheDice(): Int {
-    val numberOfRoll = (1..6).random()
-    return numberOfRoll
-}
+fun theRollOfTheDice() = (1..6).random()

@@ -2,7 +2,9 @@ package lesson_7
 
 fun main() {
 
-    val chars = ('a'..'z') + (0..9) + ('A'..'Z')
+    val chars = 'a'..'z'
+    val numbers = 0..9
+    val charsToUpperCase = 'A'..'Z'
 
     var password = ""
 
@@ -11,9 +13,15 @@ fun main() {
     if (sizeOfPassword < 6) {
         println("Пароль менее 6 символов. Введите корректный пароль")
     } else {
+        password += chars.random()
+        password += numbers.random()
+        password += charsToUpperCase.random()
+
         for (i in 0 until sizeOfPassword) {
-            password += chars.shuffled().random()
+            password += chars.random()
         }
+        password.toCharArray().shuffle()
+
         println("Ваш пароль: ${password.take(sizeOfPassword)}")
 
     }

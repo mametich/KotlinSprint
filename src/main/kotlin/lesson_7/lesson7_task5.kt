@@ -5,6 +5,7 @@ fun main() {
     val chars = 'a'..'z'
     val numbers = 0..9
     val charsToUpperCase = 'A'..'Z'
+    val allSymbols = ('a'..'z') + (0..9) + ('A'..'Z')
 
     var password = ""
 
@@ -17,8 +18,9 @@ fun main() {
         password += numbers.random()
         password += charsToUpperCase.random()
 
-        for (i in 0 until sizeOfPassword) {
+        for (i in 4 until sizeOfPassword) {
             password += chars.random()
+            password += allSymbols.random()
         }
         password.toCharArray().shuffle()
 

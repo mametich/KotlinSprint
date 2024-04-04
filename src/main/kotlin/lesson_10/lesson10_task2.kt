@@ -8,14 +8,13 @@ fun main() {
     println("Введите пароль")
     val passwordFromUser = readln()
 
-    println(checkedLoginAndPassword(loginFromUser, passwordFromUser))
+    if (checkedLoginAndPassword(loginFromUser, passwordFromUser)){
+        println("Добро пожаловать")
+    } else {
+        println("Логин или пароль недостаточно длинные")
+    }
 }
 
-fun checkedLoginAndPassword(login: String, password: String): String {
-    val messageOfChecked = if (login.length >= 4 && password.length >= 4) {
-        "Добро пожаловать"
-    } else {
-        "Логин или пароль недостаточно длинные"
-    }
-    return messageOfChecked
+fun checkedLoginAndPassword(login: String, password: String): Boolean {
+    return login.length >= 4 && password.length >= 4
 }

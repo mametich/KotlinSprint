@@ -12,9 +12,7 @@ fun main() {
 }
 
 fun checkedLoginAndPassword(login: String, password: String): String {
-    val arrayOfLogin = login.toCharArray()
-    val arrayOfPassword = password.toCharArray()
-    val messageOfChecked = if (arrayOfLogin.size + 1 > 4 && arrayOfPassword.size + 1 > 4) {
+    val messageOfChecked = if (login.length >= 4 && password.length >= 4) {
         "Добро пожаловать"
     } else {
         "Логин или пароль недостаточно длинные"

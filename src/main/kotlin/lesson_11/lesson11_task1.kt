@@ -36,8 +36,8 @@ fun main() {
 }
 
 class User(
-    var id: Int,
-    var login: String,
-    var password: String,
-    var email: String,
+    val id: Int,
+    val login: String,
+    val password: String,
+    val email: String,
 )

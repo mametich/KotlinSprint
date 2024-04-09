@@ -6,19 +6,17 @@ fun main() {
     val lengthOfPassword = readln().toInt()
 
     val passwordForUser = generationOfPasswords(lengthOfPassword)
-    println(passwordForUser)
+    println("Ваш пароль: ${passwordForUser.take(lengthOfPassword)}")
 }
 
 fun generationOfPasswords(number: Int): String {
     var password = ""
-    val rangeOfPassword = (0..9)
-    val arrayOfSymbols = arrayOf(
-        '!', '"', '#', '$', '%', '&', '/', '(', ')', '*', '+', ',', '-', '.', '/', '\''
-    )
+    val rangeOfPassword = 0..9
+    val rangeOfSpecialSymbols = '!'.. '\''
 
-    for (i in 0..number) {
+    for (i in 1..number) {
         password += rangeOfPassword.random()
-        password += arrayOfSymbols.random()
+        password += rangeOfSpecialSymbols.random()
     }
-    return password.take(number)
+    return password
 }

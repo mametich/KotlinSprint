@@ -3,6 +3,8 @@ package lesson_11
 fun main() {
 
     val participant1 = Participant("Ted", "male")
+    val participant2 = Participant("Harry", "male")
+    val participant3 = Participant("Hermione", "shemale")
 
     val room = Room(
         cover = "Начинающий английский",
@@ -11,8 +13,10 @@ fun main() {
     )
 
     room.addParticipant(participant1)
+    room.addParticipant(participant2)
+    room.addParticipant(participant3)
     room.showParticipantInformation(participant1)
-    room.updateNameAndStatusParticipant(participant1, "Furrel", "shemale")
+    room.updateNameAndStatusParticipant("Furrel", "shemale")
     room.showParticipantInformation(participant1)
 
 }
@@ -28,12 +32,12 @@ class Room(
     }
 
     fun updateNameAndStatusParticipant(
-        participant: Participant,
         name: String,
         status: String,
     ) {
-        participant.name = name
-        participant.status = status
+        println("Введите имя:")
+        val oldName = readln()
+        listOfParticipant.find { it.name == oldName }?.name = name
     }
 
     fun showParticipantInformation(participant: Participant) {

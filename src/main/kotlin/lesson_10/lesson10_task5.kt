@@ -8,13 +8,14 @@ fun main() {
     println("Введите Ваш пароль:")
     val passwordOfUser = readln()
 
-    getListOfBasket(checkedLoginAndPasswordAgain(loginOfUser, passwordOfUser).toString())
+    getListOfBasket(checkedLoginAndPasswordAgain(loginOfUser, passwordOfUser))
 }
 
-fun checkedLoginAndPasswordAgain(currentLogin: String, currentPassword: String) : Boolean {
+fun checkedLoginAndPasswordAgain(currentLogin: String, currentPassword: String) : String? {
 
     val correctLogin = "user"
     val correctPassword = "qwerty"
+
     var token: String? = null
     val rangeOfToken = (0..9) + ('a'..'z')
 
@@ -22,13 +23,13 @@ fun checkedLoginAndPasswordAgain(currentLogin: String, currentPassword: String) 
         for (i in 1..32) {
             token += rangeOfToken.random()
         }
-        return true
+        return token
     } else {
-        return false
+        return null
     }
 }
 
-fun getListOfBasket(token: String?) : String {
+fun getListOfBasket(token: String?)  {
     val listOfBasket = mutableListOf("apple", "banana", "mango")
 
     if (token != null) {
@@ -36,6 +37,5 @@ fun getListOfBasket(token: String?) : String {
     } else {
         println("Неправильный пароль")
     }
-    return listOfBasket.toString()
 }
 

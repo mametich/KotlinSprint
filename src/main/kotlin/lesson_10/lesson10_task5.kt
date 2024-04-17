@@ -12,7 +12,6 @@ fun main() {
 }
 
 fun checkedLoginAndPasswordAgain(currentLogin: String, currentPassword: String) : String? {
-
     val correctLogin = "user"
     val correctPassword = "qwerty"
 

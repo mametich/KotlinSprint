@@ -7,8 +7,8 @@ fun main() {
     val harry = forum.createMemberOfForum("Harry")
     val ron = forum.createMemberOfForum("Ron")
 
-    forum.createMessage(harry.userId, "Hello Ron!")
-    forum.createMessage(ron.userId, "Hello Harry!")
+    forum.createMessage(harry, "Hello Ron!")
+    forum.createMessage(ron, "Hello Harry!")
 
     forum.printThread()
 
@@ -31,7 +31,7 @@ class Forum {
         return memberOfForum
     }
 
-    fun createMessage(userId: String, text: String): Message {
+    fun createMessage(userId: MemberOfForum, text: String): Message {
         val message = Message(userId, text)
         listOfMessages.add(message)
 
@@ -42,7 +42,7 @@ class Forum {
         listOfMessages.forEach {
             println(
                 """
-                    ${it.authorId} : ${it.message}
+                    ${it.authorId.userName} : ${it.message}
                 """.trimIndent()
             )
         }
@@ -55,7 +55,7 @@ class MemberOfForum(
 )
 
 class Message(
-    var authorId: String,
+    var authorId: MemberOfForum,
     var message: String,
 )
 

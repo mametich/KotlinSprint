@@ -1,5 +1,7 @@
 package lesson_12
 
+private const val TEMPERATURE_KELVIN = 273.15
+
 fun main() {
 
     val weatherOfDay = WeatherOfDay(50, 10, false)
@@ -13,8 +15,8 @@ class WeatherOfDay(
     _isRainForAllDay: Boolean,
 ) {
 
-    var temtemperatureOfDay = _temperatureOfDay - 273.15
-    var temperatureOfNight = _temperatureOfNight - 273.15
+    var temtemperatureOfDay = _temperatureOfDay - TEMPERATURE_KELVIN
+    var temperatureOfNight = _temperatureOfNight - TEMPERATURE_KELVIN
     var isRainForAllDay = _isRainForAllDay
 
     fun printInformation(weatherOfDay: WeatherOfDay) {

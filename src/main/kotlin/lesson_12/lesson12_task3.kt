@@ -2,27 +2,26 @@ package lesson_12
 
 fun main() {
 
-    val weatherOfDay = WeatherOfDay()
-    weatherOfDay.temperatureOfDay = 15
-    weatherOfDay.temperatureOfNight = 20
-    weatherOfDay.isRainForAllDay = true
-
+    val weatherOfDay = WeatherOfDay(50, 10, false)
     weatherOfDay.printInformation(weatherOfDay)
 
 }
 
-class WeatherOfDay {
+class WeatherOfDay(
+    _temperatureOfDay: Int,
+    _temperatureOfNight: Int,
+    _isRainForAllDay: Boolean,
+) {
 
-    var temperatureOfDay: Int = 0
-    var temperatureOfNight: Int = 0
-    var isRainForAllDay: Boolean = false
-
+    var temtemperatureOfDay = _temperatureOfDay - 273.15
+    var temperatureOfNight = _temperatureOfNight - 273.15
+    var isRainForAllDay = _isRainForAllDay
 
     fun printInformation(weatherOfDay: WeatherOfDay) {
         println(
             """
-            температура дня: ${weatherOfDay.temperatureOfDay - 273.15}
-            температура ночи: ${weatherOfDay.temperatureOfNight - 273.15}
+            температура дня: ${weatherOfDay.temtemperatureOfDay} °С
+            температура ночи: ${weatherOfDay.temperatureOfNight} °С
             наличие осадков: ${weatherOfDay.isRainForAllDay}
         """.trimIndent()
         )

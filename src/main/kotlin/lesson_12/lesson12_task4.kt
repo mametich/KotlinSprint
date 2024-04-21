@@ -1,5 +1,7 @@
 package lesson_12
 
+private const val TEMPERATURE_KELVIN = 273.15
+
 fun main() {
 
     val weatherOfDay = WeatherOfDay4(5,10,true)
@@ -7,15 +9,19 @@ fun main() {
 }
 
 class WeatherOfDay4(
-    var temperatureOfDay: Int,
-    var temperatureOfNight: Int,
-    var isRainForAllDay: Boolean,
+    _temperatureOfDay: Int,
+    _temperatureOfNight: Int,
+    _isRainForAllDay: Boolean,
 ) {
+    var temperatureOfDay = _temperatureOfDay - TEMPERATURE_KELVIN
+    var temperatureOfNight = _temperatureOfNight - TEMPERATURE_KELVIN
+    var isRainForAllDay = _isRainForAllDay
+
 
     init {
         println("""
-            температура дня: ${temperatureOfDay - 273.15} К
-            температура ночи: ${temperatureOfNight - 273.15} К
+            температура дня: $temperatureOfDay К
+            температура ночи: $temperatureOfNight К
             наличие осадков: $isRainForAllDay
         """.trimIndent()
         )
@@ -24,8 +30,8 @@ class WeatherOfDay4(
     fun printInformation(weatherOfDay: WeatherOfDay) {
         println(
             """
-            температура дня: ${weatherOfDay.temperatureOfDay - 273.15}
-            температура ночи: ${weatherOfDay.temperatureOfNight - 273.15}
+            температура дня: ${weatherOfDay.temperatureOfDay}
+            температура ночи: ${weatherOfDay.temperatureOfNight}
             наличие осадков: ${weatherOfDay.isRainForAllDay}
         """.trimIndent()
         )

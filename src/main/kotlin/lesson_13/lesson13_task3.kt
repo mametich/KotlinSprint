@@ -10,9 +10,8 @@ fun main() {
         Contact("Draco", 456123264579, "Slytherin")
     )
 
-    listOfContacts.forEach {
-        println("Имя: ${it.name} Номер: ${it.number} Компания: ${it.company}")
-    }
+    val listOfCompany = listOfContacts.mapNotNull { it.company }
+    println(listOfCompany)
 
 }
 

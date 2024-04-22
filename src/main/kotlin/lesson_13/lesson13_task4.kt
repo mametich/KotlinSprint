@@ -24,11 +24,8 @@ fun main() {
 
     println("Введите название компании")
     val nameOfCompanyFromUser = readlnOrNull()
-    if (!nameOfCompanyFromUser.isNullOrEmpty()) {
-        nameOfCompanyOfContact = nameOfCompanyFromUser
-    } else {
-        nameOfCompanyOfContact = null
-    }
+    nameOfCompanyOfContact = nameOfCompanyFromUser
+
 
     val contact = Contact4(nameOfContact, numberOfContact, nameOfCompanyOfContact)
     listOfContact.add(contact)

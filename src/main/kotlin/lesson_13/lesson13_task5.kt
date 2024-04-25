@@ -7,9 +7,11 @@ fun main() {
     var numberOfContact: Long? = 0
 
     println("Введите номер контакта")
-    val numberFromUser = readlnOrNull()?.toLongOrNull()
-    if (numberFromUser !is Long) {
-        throw Exception("Вы ввели буквы")
+    val numberFromUser = readlnOrNull()
+    try {
+        numberOfContact = numberFromUser?.toLong()
+    } catch (e: Exception) {
+        println("Вы ввели буквы")
     }
 
 

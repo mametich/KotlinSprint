@@ -3,25 +3,27 @@ package lesson_14
 import kotlin.math.pow
 
 private const val NUMBER_OF_P = 3.14
+private const val COLOR_WHITE = "White"
+private const val COLOR_BLACK = "Black"
 
 fun main() {
 
     val listOfFigure = mutableListOf<Figure>()
 
-    val circle1 = Circle("белый", 6.5)
-    val circle2 = Circle("Черный", 4.2)
-    val circle3 = Circle("белый", 6.4)
-    val circle4 = Circle("Черный", 5.3)
+    val circle1 = Circle(COLOR_WHITE, 6.5)
+    val circle2 = Circle(COLOR_BLACK, 4.2)
+    val circle3 = Circle(COLOR_WHITE, 6.4)
+    val circle4 = Circle(COLOR_BLACK, 5.3)
 
-    val rectangle1 = Rectangle("Белый", 5.0, 3.1)
-    val rectangle2 = Rectangle("Черный", 4.2, 6.3)
-    val rectangle3 = Rectangle("Белый", 3.0, 2.9)
-    val rectangle4 = Rectangle("Черный", 7.3, 1.8)
+    val rectangle1 = Rectangle(COLOR_WHITE, 5.0, 3.1)
+    val rectangle2 = Rectangle(COLOR_BLACK, 4.2, 6.3)
+    val rectangle3 = Rectangle(COLOR_WHITE, 3.0, 2.9)
+    val rectangle4 = Rectangle(COLOR_BLACK, 7.3, 1.8)
 
     listOfFigure.addAll(listOf(circle1, circle2, circle3, circle4, rectangle1, rectangle2, rectangle3, rectangle4))
 
-    val listOfBlackFigure = listOfFigure.filter { it.color == "Черный" }.sumOf { it.findPerimeter() }
-    val listOfWhiteFigure = listOfFigure.filter { it.color == "Белый" }.sumOf { it.findSquare() }
+    val listOfBlackFigure = listOfFigure.filter { it.color == COLOR_BLACK }.sumOf { it.findPerimeter() }
+    val listOfWhiteFigure = listOfFigure.filter { it.color == COLOR_WHITE }.sumOf { it.findSquare() }
 
     println(
         """

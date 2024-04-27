@@ -10,7 +10,8 @@ fun main() {
     val numberFromUser = readlnOrNull()
     try {
         numberOfContact = numberFromUser?.toLong()
-    } catch (e: Exception) {
+    }
+    catch (e: NumberFormatException) {
         println("Вы ввели буквы")
     }
 

@@ -2,13 +2,13 @@ package lesson_15
 
 fun main() {
 
-val weatherServer = WeatherServer()
+    val weatherServer = WeatherServer()
 
-val temperature = Temperature(27.0)
-val precipitationAmount = PrecipitationAmount(true)
+    val temperature = Temperature(27.0)
+    val precipitationAmount = PrecipitationAmount(15.0)
 
-weatherServer.sendInformationToServer(temperature)
-weatherServer.sendInformationToServer(precipitationAmount)
+    weatherServer.sendInformationToServer(temperature)
+    weatherServer.sendInformationToServer(precipitationAmount)
 
 }
 
@@ -17,7 +17,7 @@ class WeatherServer() {
     fun sendInformationToServer(weatherStationStats: WeatherStationStats) {
         val stringInformation = when (weatherStationStats) {
             is Temperature -> "Температура: ${weatherStationStats.informationAboutTemperature}"
-            is PrecipitationAmount -> "Наличие осадков: ${weatherStationStats.isHaveRain}"
+            is PrecipitationAmount -> "Наличие осадков: ${weatherStationStats.quantityOfPrecipitation}"
             else -> "Загрузите информацию"
         }
         println(stringInformation)
@@ -25,9 +25,8 @@ class WeatherServer() {
 }
 
 
-abstract class WeatherStationStats() {
+abstract class WeatherStationStats
 
-}
 
 class Temperature(
     val informationAboutTemperature: Double
@@ -36,7 +35,7 @@ class Temperature(
 }
 
 class PrecipitationAmount(
-    val isHaveRain: Boolean
+    val quantityOfPrecipitation: Double
 ) : WeatherStationStats() {
 
 }

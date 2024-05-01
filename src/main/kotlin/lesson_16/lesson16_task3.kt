@@ -14,5 +14,4 @@ class User(
     fun checkedPassword(passwordFromUser: String): Boolean {
         return password == passwordFromUser
     }
-
 }

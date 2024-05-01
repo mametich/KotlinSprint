@@ -3,74 +3,97 @@ package lesson_15
 fun main() {
 
     val truck = Truck()
-    truck.moveOfCar()
-    truck.moveOfCargo(2)
-    truck.moveOfPassenger(1)
+    truck.downloadCargo(2)
+    truck.downloadPassenger(1)
+    truck.move()
+    truck.unloadCargo(2)
+    truck.unloadPassenger(1)
 
     val passengerCar = PassengerCar(3)
-    passengerCar.moveOfCar()
-    passengerCar.moveOfPassenger(3)
-    passengerCar.moveOfCar()
-    passengerCar.moveOfPassenger(2)
+    passengerCar.downloadPassenger(3)
+    passengerCar.move()
+    passengerCar.unloadPassenger(3)
+
+    passengerCar.downloadPassenger(2)
+    passengerCar.move()
+    passengerCar.unloadPassenger(2)
 
 }
 
 
-interface ActionOfCar {
-    fun moveOfCar()
+interface Movable {
+    fun move()
 }
 
-interface ActionWithCargo {
-    fun moveOfCargo(cargo: Int)
+interface CargoCarrier {
+    fun downloadCargo(cargo: Int)
+    fun unloadCargo(cargo: Int)
 }
 
-interface ActionWithPassenger {
-    fun moveOfPassenger(passenger: Int)
+interface PassengerCarrier {
+    fun downloadPassenger(passenger: Int)
+    fun unloadPassenger(passenger: Int)
 }
 
 
 class Truck(
     var quantityOfPassenger: Int = 1,
     var quantityOfCargo: Int = 2,
-) : ActionOfCar, ActionWithCargo, ActionWithPassenger {
+) : Movable, CargoCarrier, PassengerCarrier {
 
-    override fun moveOfCar() {
+    override fun move() {
         println("Грузовик начал движение")
     }
 
-    override fun moveOfCargo(cargo: Int) {
+    override fun downloadCargo(cargo: Int) {
         val messageOfCargo = when (cargo) {
-            in 0..2 -> "Грузовик везет $cargo тонны"
+            in 0..2 -> "Грузовик загрузил $cargo тонны"
             else -> "Не хватает места для груза"
         }
         println(messageOfCargo)
     }
 
-    override fun moveOfPassenger(passenger: Int) {
+    override fun unloadCargo(cargo: Int) {
+        println("Грузовик разгрузил $cargo тонны")
+    }
+
+    override fun downloadPassenger(passenger: Int) {
         val messageOfPassenger = when (passenger) {
-            1 -> "Грузовик везет $passenger пассажира"
+            1 -> "Грузовик посадил $passenger пассажира"
             else -> "Не хватает места"
         }
         println(messageOfPassenger)
+    }
+
+    override fun unloadPassenger(passenger: Int) {
+        println("Грузовик высадил $passenger пассажира")
     }
 
 }
 
 class PassengerCar(
     var quantityOfPassenger: Int,
-) : ActionOfCar, ActionWithPassenger {
+) : Movable, PassengerCarrier {
 
-    override fun moveOfCar() {
+    override fun move() {
         println("Автомобиль начал движение")
     }
 
-    override fun moveOfPassenger(passenger: Int) {
+    override fun downloadPassenger(passenger: Int) {
         val messageOfPassenger = when (passenger) {
-            1 -> "Автомобиль везет $passenger пассажира"
-            in 2..3 -> "Автомобиль везет $passenger пассажиров"
+            1 -> "Автомобиль посадил $passenger пассажира"
+            in 2..3 -> "Автомобиль посадил $passenger пассажиров"
             else -> "Не хватает места"
         }
         println(messageOfPassenger)
     }
 
+    override fun unloadPassenger(passenger: Int) {
+        val messageOfPassenger = when (passenger) {
+            1 -> "Автомобиль перевез $passenger пассажира"
+            in 2..3 -> "Автомобиль перевез $passenger пассажиров"
+            else -> "Не хватает места"
+        }
+        println(messageOfPassenger)
+    }
 }

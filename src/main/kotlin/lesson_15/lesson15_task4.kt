@@ -3,28 +3,25 @@ package lesson_15
 fun main() {
 
     val musicalInstrument = MusicalInstrument("Гитара", 45)
-    musicalInstrument.searching("Гитара")
+    musicalInstrument.search("Гитара")
 
 }
 
-interface Action {
-    fun searching(name: String)
+interface Searchable {
+    fun search(name: String)
 }
 
 
 class MusicalInstrument(
     val name: String,
     var count: Int,
-) : Action {
-    override fun searching(name: String) {
+) : Searchable {
+    override fun search(name: String) {
         println("Выполняется поиск")
     }
-
 }
 
 class AccessoriesForMusicalInstrument(
     val name: String,
     var count: Int,
-) {
-
-}
+)

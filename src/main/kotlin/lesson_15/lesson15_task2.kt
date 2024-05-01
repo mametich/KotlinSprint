@@ -12,7 +12,7 @@ fun main() {
 
 }
 
-class WeatherServer() {
+class WeatherServer {
 
     fun sendInformationToServer(weatherStationStats: WeatherStationStats) {
         val stringInformation = when (weatherStationStats) {
@@ -27,15 +27,6 @@ class WeatherServer() {
 
 abstract class WeatherStationStats
 
+class Temperature(val informationAboutTemperature: Double) : WeatherStationStats()
 
-class Temperature(
-    val informationAboutTemperature: Double
-) : WeatherStationStats() {
-
-}
-
-class PrecipitationAmount(
-    val quantityOfPrecipitation: Double
-) : WeatherStationStats() {
-
-}
+class PrecipitationAmount(val quantityOfPrecipitation: Double) : WeatherStationStats()

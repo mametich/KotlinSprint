@@ -23,5 +23,4 @@ class Circle(
     fun theAreaOfTheCircle(): Double {
         return (numberOfPi * radius).pow(2)
     }
-
 }

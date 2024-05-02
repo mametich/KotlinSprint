@@ -1,6 +1,7 @@
 package lesson_16
 
 import kotlin.math.pow
+private const val NUMBER_OF_PI = 3.14
 
 fun main() {
 
@@ -14,13 +15,11 @@ class Circle(
     private var radius: Double
 ) {
 
-    private val numberOfPi = 3.14
-
     fun circumferenceOfTheCircle(): Double {
-        return 2 * numberOfPi * radius
+        return 2 * NUMBER_OF_PI * radius
     }
 
     fun theAreaOfTheCircle(): Double {
-        return (numberOfPi * radius).pow(2)
+        return (NUMBER_OF_PI * radius).pow(2)
     }
 }

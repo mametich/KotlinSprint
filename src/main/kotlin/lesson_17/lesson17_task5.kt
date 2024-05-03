@@ -18,7 +18,7 @@ class User5(
     var login = _login
         set(value) {
             field = value
-            println("Вы успешно изменили пароль")
+            println("Вы успешно изменили логин")
         }
 
     var password = _password

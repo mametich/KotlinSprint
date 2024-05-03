@@ -2,7 +2,7 @@ package lesson_16
 
 fun main() {
 
-    val player = Player()
+    val player = Player("Asterix", 100,15)
     player.showInformationAboutPlayer()
 
     player.takeDamage(15)
@@ -22,17 +22,18 @@ fun main() {
     player.showInformationAboutPlayer()
 }
 
-class Player {
+class Player(
+    val name: String,
+    private var health: Int,
+    private var powerOfHeat: Int,
+) {
 
-    val name: String = ""
-    private var health: Int = 100
-    private var powerOfHeat: Int = 15
 
     fun takeDamage(damage: Int) {
         if (health >= 0) {
             health -= damage
         } else {
-            deathOfPlayer()
+            die()
         }
     }
 
@@ -44,7 +45,7 @@ class Player {
         }
     }
 
-    private fun deathOfPlayer() {
+    private fun die() {
         println("Игрок погиб")
         health = 0
         powerOfHeat = 0

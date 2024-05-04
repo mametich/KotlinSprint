@@ -2,7 +2,7 @@ package lesson_17
 
 fun main() {
 
-    val user5 = User5("Robin", "qwerty123")
+    val user5 = User5("Robin", "qwerty123789456")
     println(user5.password)
     user5.password = "wert"
 
@@ -22,7 +22,7 @@ class User5(
         }
 
     var password = _password
-        get() = field[0].toString().padEnd(field.length, '*')
+        get() = "*".repeat(field.length)
         set(value) = println("Вы не можете изменить пароль")
 
 }

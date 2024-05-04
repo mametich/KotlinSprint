@@ -3,20 +3,26 @@ package lesson_16
 fun main() {
 
     val order = Order()
-    order.changeStatusOfOrder("Готовиться")
+    order.sendRequestToManager("Готовиться")
     println(order.getInformationAboutStatus())
 
-    order.changeStatusOfOrder("Готов")
+    order.sendRequestToManager("Готов")
     println(order.getInformationAboutStatus())
 
 }
+
 
 class Order {
 
     private val numberOfOrder: Int = 0
     private var statusOfOrder: String = ""
 
-    fun changeStatusOfOrder(status: String) {
+
+    fun sendRequestToManager(request: String) {
+        changeStatusOfOrder(request)
+    }
+
+    private fun changeStatusOfOrder(status: String) {
         statusOfOrder = status
     }
 

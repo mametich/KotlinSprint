@@ -2,25 +2,26 @@ package lesson_17
 
 fun main() {
 
-val folder = Folder()
+    val folder = Folder("Main", 15, false)
+    println(folder.name)
 
-
-    folder.name
+    val folder2 = Folder("Second", 20, true)
+    println(folder2.name)
 
 }
 
-class Folder {
-    var name: String = "Main"
-        get() = if (flagOfSecret) {
-            quantityOfFiles = 0
-            println("скрытая папка. Количество файлов - $quantityOfFiles").toString()
-        } else {
-            println("название папки: $field. Количество файлов - $quantityOfFiles")
-        }.toString()
-
-
-    var quantityOfFiles: Int = 15
-    var flagOfSecret: Boolean = false
+class Folder(
+    _name: String,
+    _quantityOfFiles: Int,
+    _flagOfSecret: Boolean,
+) {
+    var quantityOfFiles = _quantityOfFiles
+    var flagOfSecret = _flagOfSecret
+    var name = _name
+        get() = when (flagOfSecret) {
+            true -> "скрытая папка. Количество файлов - 0"
+            false -> "название папки: $field. Количество файлов - $quantityOfFiles"
+        }
 
 
 }

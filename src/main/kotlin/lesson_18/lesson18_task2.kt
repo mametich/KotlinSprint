@@ -16,19 +16,19 @@ fun main() {
 
 }
 
-open class DiceWithFour() {
+open class DiceWithFour {
     open fun rollTheDice() {
         println("Выпало: ${(1..4).random()}")
     }
 }
 
-class DiceWithSix() : DiceWithFour() {
+class DiceWithSix : DiceWithFour() {
     override fun rollTheDice() {
         println("Выпало: ${(1..6).random()}")
     }
 }
 
-class DiceWithEight() : DiceWithFour() {
+class DiceWithEight : DiceWithFour() {
     override fun rollTheDice() {
         println("Выпало: ${(1..8).random()}")
     }

@@ -2,7 +2,7 @@ package lesson_17
 
 fun main() {
 
-    val parcel = Parcel()
+    val parcel = Parcel(0,156,"Moscow")
 
     parcel.currentLocation = "Omsk"
     println(parcel.countOfMove)
@@ -13,14 +13,16 @@ fun main() {
 }
 
 class Parcel(
-    private var _countOfMove: Int = 0
+    _countOfMove: Int,
+    _numberOfPackage: Int,
+    _currentLocation: String,
 ) {
 
     var countOfMove = _countOfMove
 
-    var numberOfPackage: Int = 0
+    var numberOfPackage = _numberOfPackage
 
-    var currentLocation: String = "Moscow"
+    var currentLocation = _currentLocation
         set(value) {
             countOfMove++
             field = value

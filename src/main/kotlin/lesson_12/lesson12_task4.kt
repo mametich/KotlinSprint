@@ -27,13 +27,4 @@ class WeatherOfDay4(
         )
     }
 
-    fun printInformation(weatherOfDay: WeatherOfDay) {
-        println(
-            """
-            температура дня: ${weatherOfDay.temperatureOfDay}
-            температура ночи: ${weatherOfDay.temperatureOfNight}
-            наличие осадков: ${weatherOfDay.isRainForAllDay}
-        """.trimIndent()
-        )
-    }
 }

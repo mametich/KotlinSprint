@@ -23,7 +23,6 @@ open class Dice(private var numberOfSides: Int) {
     }
 }
 
-
 class DiceWithFour(numberOfSides: Int) : Dice(numberOfSides)
 
 class DiceWithSix(numberOfSides: Int) : Dice(numberOfSides)

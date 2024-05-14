@@ -7,6 +7,7 @@ fun main() {
 
 }
 
+
 fun String.vowelCount(word : String) : Int {
     var count = 0
     for (letter in word) {

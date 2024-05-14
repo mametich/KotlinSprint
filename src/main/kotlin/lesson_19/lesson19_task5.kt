@@ -21,19 +21,20 @@ fun main() {
         }
 }
 
-enum class Gender(var nameOfGender: String) {
-    MAN("мужчина"),
-    WOMAN("женщина");
+enum class Gender() {
+    MAN,
+    WOMAN,
+    ERROR
 }
 
-fun getGenderName(genderFromUser: String) : String {
+fun getGenderName(genderFromUser: String) : Gender {
     return when(genderFromUser) {
-        "мужчина" -> Gender.MAN.nameOfGender
-        "женщина" -> Gender.WOMAN.nameOfGender
-        else -> { "Неизвестно" }
+        "мужчина" -> Gender.MAN
+        "женщина" -> Gender.WOMAN
+        else -> Gender.ERROR
     }
 }
 
-class Person(var name: String, var gender: String) {
+class Person(var name: String, var gender: Gender) {
 
 }

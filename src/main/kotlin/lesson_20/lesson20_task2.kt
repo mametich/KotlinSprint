@@ -10,13 +10,13 @@ fun main() {
     )
 
     println()
-    println(drinkPointHealth(player))
+    println("Использовано лечебное зелье. Здоровье игрока:${drinkPointHealth(player)}")
 }
 
-val drinkPointHealth: (Player) -> String = {
-    "Игрок выпил зелье здоровья. Сейчас его уровень здоровья: " +
-            "${it.currentHealth + (it.maxHealth - it.currentHealth)}"
+val drinkPointHealth: (Player) -> Int = {
+            it.currentHealth + (it.maxHealth - it.currentHealth)
 }
+
 
 
 class Player(

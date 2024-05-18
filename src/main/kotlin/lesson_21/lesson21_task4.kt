@@ -10,9 +10,9 @@ fun main() {
 }
 
 fun File.writeToFile() : String {
-    val text = "Супер пупер текст"
+    val text = "Супер Пупер Текст"
     createNewFile()
-    writeText(text)
-    return "$text записан в фаил $name"
+    appendText(text)
+    return "${text.lowercase()} записан в фаил $name"
 }
 

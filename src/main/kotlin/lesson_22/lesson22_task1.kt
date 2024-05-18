@@ -16,6 +16,7 @@ fun main() {
     println(dataBook1 == dataBook2)
 }
 
+
 class RegularBook(
     var name: String,
     var author: String,

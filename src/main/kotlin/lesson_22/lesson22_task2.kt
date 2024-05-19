@@ -2,14 +2,15 @@ package lesson_22
 
 fun main() {
 
-    val regularBook = RegularBook2("Неукротимая планета", "Гарри Гаррисон")
-    val dataBook = DataBook2("Щит и меч", "Вадим Кожевников")
+    val regularBook2 = RegularBook2("Гарри Поттер", "Джоан Роулинг")
+    val dataBook2 = DataBook2("Властелин колец", "Джон Рональд Руэл Толкин")
 
-    //в обычном классе метод toString() не переопределен и он возвращает хэш-код объекта в шестнадцатеричном виде
-    println(regularBook)
+    //в обычном классе не переопредлен метод toString() поэтому печатается хэш код в 16-разрядном виде
+    println(regularBook2)
 
-    //в дата классе метод toString() переопределен и он возвращает строку
-    println(dataBook)
+    // дата классе метод toString() переопределен и печатает строку
+    println(dataBook2)
+
 
 }
 

@@ -11,6 +11,7 @@ fun main() {
     // дата классе метод toString() переопределен и печатает строку
     println(dataBook2)
 
+
 }
 
 class RegularBook2(

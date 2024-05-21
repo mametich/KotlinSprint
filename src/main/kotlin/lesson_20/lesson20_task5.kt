@@ -3,28 +3,26 @@ package lesson_20
 fun main() {
 
     val bender = Robot()
+
     println(bender.say())
 
+    bender.setModifier { str: String -> str.reversed() }
 
+    println(bender.say())
 
 }
 
-class Robot(
+class Robot {
+
     private var modifier: (String) -> String = { it }
-) {
 
-    fun say() : String {
-        return reversedPhrase(listOfPhrase.random())
-    }
-
-    val reversedPhrase = { phrase: String ->
-        phrase.reversed()
+    fun say() {
+        println(modifier(listOfPhrase.random()))
     }
 
     fun setModifier(modifier: (String) -> String) {
-        reversedPhrase
+        this.modifier = modifier
     }
-
 }
 
 val listOfPhrase = listOf(

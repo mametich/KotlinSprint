@@ -4,11 +4,11 @@ fun main() {
 
     val bender = Robot()
 
-    println(bender.say())
+    bender.say()
 
     bender.setModifier { str: String -> str.reversed() }
 
-    println(bender.say())
+    bender.say()
 
 }
 

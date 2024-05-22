@@ -6,9 +6,10 @@ fun main() {
 
 }
 
-class MainScreenViewModel(
-    private var mainScreenState: MainScreenState,
-) {
+class MainScreenViewModel() {
+
+    private var mainScreenState = MainScreenState("")
+
     fun loadData() {
         mainScreenState = mainScreenState.copy("Данные отсутствуют")
         mainScreenState = mainScreenState.copy("Данные загружаются", isLoading = true)
